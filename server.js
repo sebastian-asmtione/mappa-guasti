@@ -11,7 +11,7 @@ const PASSWORD = "asm2025";
 
 // restituisce JSON interruzioni
 app.get("/interruzioni.json", (req, res) => {
-    res.sendFile(__dirname + "/interruzioni.json");
+    res.sendFile(https://mappa-guasti-gojq.onrender.com + "/interruzioni.json");
 });
 
 // inserimento guasto
@@ -43,4 +43,5 @@ app.get("/reset", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Backend attivo"));
+
 
