@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     res.send("Backend attivo");
 });
 
-// Restituisce il file guasti
+// Restituisce il file interruzioni
 app.get("/interruzioni.json", (req, res) => {
     res.sendFile(__dirname + "/interruzioni.json");
 });
@@ -46,7 +46,7 @@ app.post("/inserisci", async (req, res) => {
     }
 });
 
-// Reset dei guasti
+// Reset totale
 app.get("/reset", async (req, res) => {
     await fs.writeJson("interruzioni.json", [], { spaces: 2 });
     res.send("Interruzioni cancellate");
@@ -55,15 +55,6 @@ app.get("/reset", async (req, res) => {
 // Porta compatibile con Render
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("Backend attivo sulla porta " + PORT));
-
-// reset totale
-app.get("/reset", async (req, res) => {
-    await fs.writeJson("interruzioni.json", [], { spaces: 2 });
-    res.send("Interruzioni cancellate");
-});
-
-app.listen(3000, () => console.log("Backend attivo"));
-
 
 
 
