@@ -1,4 +1,4 @@
-onst express = require("express");
+const express = require("express");
 const fs = require("fs-extra");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -63,6 +63,7 @@ app.get("/reset", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Backend attivo"));
+
 
 
 
