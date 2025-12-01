@@ -23,7 +23,7 @@ document.getElementById("f").addEventListener("submit", async e => {
     d.lat = parseFloat(d.lat);
     d.lng = parseFloat(d.lng);
 
-    const r = await fetch("/inserisci", {
+    const r = await fetch("https://mappa-guasti-gojq.onrender.com/inserisci", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(d)
@@ -36,4 +36,5 @@ document.getElementById("f").addEventListener("submit", async e => {
 
 </body>
 </html>
+
 
