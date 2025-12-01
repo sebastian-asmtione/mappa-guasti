@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Inserisci interruzione</title></head>
+<body>
+
+<h2>Inserimento interruzione</h2>
+
+<form id="f">
+    Password: <input name="password" type="password" required><br><br>
+    Zona: <input name="zona" required><br><br>
+    Tipo: <input name="tipo" required><br><br>
+    Ripristino: <input name="ripristino" required><br><br>
+    Utenti: <input name="utenti" type="number" required><br><br>
+    Lat: <input name="lat" required><br><br>
+    Lng: <input name="lng" required><br><br>
+    <button>Invia</button>
+</form>
+
+<script>
+document.getElementById("f").addEventListener("submit", async e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(e.target).entries());
+    d.lat = parseFloat(d.lat);
+    d.lng = parseFloat(d.lng);
+
+    const r = await fetch("/inserisci", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(d)
+    });
+
+    if (r.ok) alert("Interruzione salvata");
+    else alert("Errore: password errata");
+});
+</script>
+
+</body>
+</html>
+
