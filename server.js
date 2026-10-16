@@ -145,20 +145,32 @@ app.post("/inserisci", async (req, res) => {
 // Avvio del server su Render
 const PORT = process.env.PORT || 3000;
 
-// Reset totale su GitHub, compatibile con il pulsante esistente
+// Reset totale su GitHub
 app.get("/reset", async (req, res) => {
     try {
         const { sha } = await leggiInterruzioni();
-        await salvaSuGitHub([], sha);
-        res.send("Interruzioni cancellate");
+        const risultato = await salvaSuGitHub([], sha);
+
+        console.log(
+            "Reset completato su GitHub. Commit:",
+            risultato.commit?.sha || "creato"
+        );
+
+        res.json({
+            ok: true,
+            message: "Tutte le interruzioni sono state cancellate"
+        });
     } catch (err) {
         console.error("Errore reset:", err.message);
-        res.status(500).send("Errore durante il reset");
+        res.status(500).json({
+            ok: false,
+            error: err.message
+        });
     }
+});
 
 app.listen(PORT, () => {
     console.log(`Backend mappa guasti ASM attivo sulla porta ${PORT}`);
 });
-
 
 
