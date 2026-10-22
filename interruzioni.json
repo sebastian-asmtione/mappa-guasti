@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "zona": "Via 3 Novembre n° 19, 21, 21A, 23, 25, 27",
+    "tipo": "interruzione programmata",
+    "ripristino": "28.10.2026 dalle ore 08.30 alle ore 11.00",
+    "utenti": 17,
+    "lat": 45.982575,
+    "lng": 10.668561
+  }
+]
