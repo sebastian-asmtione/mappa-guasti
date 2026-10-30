@@ -6,5 +6,13 @@
     "utenti": 17,
     "lat": 45.982575,
     "lng": 10.668561
+  },
+  {
+    "zona": "Via del Foro, via Roma, via F. FIlzi e via Circonvallazione",
+    "tipo": "Interruzione programmata",
+    "ripristino": "05.11.2026 dalle ore 16:30 alle ore 18:00",
+    "utenti": 74,
+    "lat": 46.03204,
+    "lng": 10.724524
   }
 ]
