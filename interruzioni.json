@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "zona": "Via dei Salec, 1 e 4",
+    "tipo": "interruzione programmata",
+    "ripristino": "20.11.2026 dalle ore 13.30 alle ore 16.00",
+    "utenti": 3,
+    "lat": 45.982118,
+    "lng": 10.670585
+  }
+]
